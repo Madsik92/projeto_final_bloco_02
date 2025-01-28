@@ -4,6 +4,9 @@ import { CategoriaModule } from './categoria/categoria.module';
 import { Categoria } from './categoria/entities/categoria.entity';
 import { ProdutoModule } from './produto/produto.module';
 import { Produto } from './produto/entities/produto.entity';
+import { AuthModule } from './auth/auth.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
 imports: [
@@ -14,12 +17,14 @@ port: 3306,
 username: 'root',
 password: 'root',
 database: 'db_farmacia',
-entities: [ Categoria, Produto ],
+entities: [ Categoria, Produto, Usuario ],
 synchronize: true,
 logging: true,
 }),
 CategoriaModule,
 ProdutoModule,
+AuthModule,
+UsuarioModule,
 ],
 controllers: [],
 providers: [],
